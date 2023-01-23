@@ -1,11 +1,6 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-const Analytics = require('@rudderstack/rudder-sdk-node');
-
-const client = new Analytics("22KSXKUWVnRkVvhPPnpTz5NAlli", {
-  dataPlaneUrl: "https://fatmapdridxz.dataplane.rudderstack.com"
-});
 
 const port = process.env.PORT || 3000
 
@@ -29,14 +24,6 @@ const startupMessage = `[48;2;0;0;0m [48;2;0;0;0m [48;2;0;0;0m [48;2;0;0;0m
 `
 
 app.get('/', (req, res) => {
-  client.track({
-    userId: "1hKOmRA4GRlm",
-    event: "Item Viewed",
-    properties: {
-      revenue: 19.95,
-      shippingMethod: "Premium",
-    }
-  })
   res.send('Hello World!')
 })
 
