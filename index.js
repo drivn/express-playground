@@ -7,6 +7,8 @@ const port = process.env.PORT || 3000
 
 app.use(cors())
 
+console.log("PGSSLROOTCERT", process.env.PGSSLROOTCERT)
+
 // const client = new Client({
 //   connectionString: process.env.DATABASE_URL.split("?")[0],
 //   ssl: {
