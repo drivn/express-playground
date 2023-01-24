@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 
 app.use(cors())
 
-const connectionString = `${process.env.DATABASE_URL}&sslrootcert=${encodeURI(process.env.CA_CERT)}`
+const connectionString = `${process.env.DATABASE_URL}&sslrootcert=ca_cert.cert`
 console.log({connectionString})
 
 const client = new Client({ connectionString })
