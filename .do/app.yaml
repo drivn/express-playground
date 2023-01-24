@@ -6,3 +6,7 @@ services:
     deploy_on_push: true
     repo: drivn/express-playground
   name: express-playground
+  envs:
+  - key: FOO
+    value: "${_self.FOO}"
+    scope: BUILD_AND_RUN_TIME

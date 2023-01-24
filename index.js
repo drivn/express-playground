@@ -7,15 +7,16 @@ const port = process.env.PORT || 3000
 
 app.use(cors())
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL.split("?")[0],
-  ssl: {
-    rejectUnauthorized: true,
-    ca: process.env.CA_CERT
-  }
-})
+// const client = new Client({
+//   connectionString: process.env.DATABASE_URL.split("?")[0],
+//   ssl: {
+//     rejectUnauthorized: true,
+//     ca: process.env.CA_CERT
+//   }
+// })
+const client = new Client({ connectionString: process.env.DATABASE_URL })
 client.connect()
-  .then(() => console.log('connected'))
+  .then(() => console.log('connected!'))
   .catch((err) => console.error('connection error', err.stack))
 
 // client
